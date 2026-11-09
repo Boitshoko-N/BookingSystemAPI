@@ -21,6 +21,8 @@ namespace BookingSystemAPI.Models
 
         [Required]
         public string PhoneNumber { get; set; } = string.Empty;
+        public List<Student> Students { get; set; } = new List<Student>();
+        public List<Booking> Bookings { get; set; } = new List<Booking>();
 
     }
 
@@ -47,15 +49,10 @@ namespace BookingSystemAPI.Models
         public string email { get; set; } = string.Empty;
         [Required]
         public string phoneNumber { get; set; } = string.Empty;
-        [Required]
-        public string Role { get; set; } = string.Empty;
+        public int RoleId { get; set; }
+        public Role? Role { get; set; }
         [Required]
         public string Password { get; set; } = string.Empty;
-
-        public string GetRole()
-        {
-            return Role;
-        }
     }
 
 }
